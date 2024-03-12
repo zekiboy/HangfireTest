@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Jobs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jobs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.9" />
+    <PackageReference Include="Hangfire" Version="1.8.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+</Project>
